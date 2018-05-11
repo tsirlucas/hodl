@@ -1,28 +1,27 @@
 import React from 'react';
-import {Person} from 'models';
-import {PersonService} from 'services';
-
+import {connect} from 'react-redux';
 import {HomePresentational} from './Home.presentational';
+import {
+  mapDispatchToProps,
+  MapDispatchToProps,
+  mapStateToProps,
+  MapStateToProps,
+} from './Home.selectors';
 
-export type HomeState = {persons: Person[]};
-export class Home extends React.Component<{}, HomeState> {
-  unsubscribe: Function;
+export type HomeProps = MapStateToProps & MapDispatchToProps;
 
-  state = {
-    persons: null as Person[],
-  };
-
-  componentDidMount() {
-    this.unsubscribe = PersonService.getInstance().subscribeToPersons((persons) => {
-      this.setState(() => ({persons: persons}));
-    });
+export class UnconnectedHome extends React.Component<HomeProps> {
+  componentWillMount() {
+    this.props.actions.personsSubscribe();
   }
 
   componentWillUnmount() {
-    this.unsubscribe();
+    this.props.actions.personsUnsubscribe();
   }
 
   render() {
-    return <HomePresentational persons={this.state.persons} />;
+    return <HomePresentational persons={this.props.persons} />;
   }
 }
+
+export const Home = connect(mapStateToProps, mapDispatchToProps)(UnconnectedHome);

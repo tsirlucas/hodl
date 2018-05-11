@@ -18,20 +18,27 @@
     "preset": "jest-expo"
   },
   "devDependencies": {
-    "@types/react": "^16.3.14",
-    "@types/react-native": "^0.55.12",
-    "@types/socket.io-client": "^1.4.32",
-    "jest-expo": "~27.0.0",
+    "@types/react": "16.3.14",
+    "@types/react-native": "0.55.12",
+    "@types/react-redux": "6.0.0",
+    "@types/socket.io-client": "1.4.32",
+    "jest-expo": "27.0.0",
     "react-native-scripts": "1.14.0",
-    "react-native-typescript-transformer": "^1.2.5",
+    "react-native-typescript-transformer": "1.2.5",
     "react-test-renderer": "16.3.1",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3"
+    "tslint": "5.10.0",
+    "typescript": "2.8.3",
+    "utility-types": "2.0.0"
   },
   "dependencies": {
-    "expo": "^27.0.1",
+    "expo": "27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
-    "socket.io-client": "^2.1.0"
+    "react-native": "0.55.2",
+    "react-redux": "5.0.7",
+    "redux": "3.7.2",
+    "redux-act": "1.7.4",
+    "redux-observable": "0.18.0",
+    "rxjs": "5.5.10",
+    "socket.io-client": "2.1.0"
   }
 }
