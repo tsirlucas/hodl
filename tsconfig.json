@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "lib": ["es2015", "es2018", "esnext"],
+    "noEmit": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types",
+    ],
+    "skipLibCheck": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "paths": {
+      "src": ["src"],
+      "src/*": ["src/*"],
+      "components": ["src/components/index.ts"],
+	  "components/*": ["src/components/*"],
+	  "views": ["src/views/index.ts"],
+	  "views/*": ["src/views/*"],
+	  "services": ["src/services/index.ts"],
+      "services/*": ["src/services/*"],
+	  "models": ["src/models/index.ts"],
+      "models/*": ["src/models/*"]
+    }
+  },
+  "filesGlob": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "types": [
+    "react",
+    "react-native",
+    "jest"
+  ],
+  "include": ["./src"],
+  "compileOnSave": true
+}
